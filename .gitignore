@@ -1,0 +1,7 @@
+node_modules
+static/css
+static/js
+public/
+static/images-theme
+.DS_Store
+package-lock.json
