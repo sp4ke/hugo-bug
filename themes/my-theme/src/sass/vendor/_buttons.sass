@@ -1,0 +1,41 @@
+@mixin button-light($color: $blue, $size: 14px)
+    border: 2px solid $color
+    background-color: $white
+    color: $blue
+    font-size: $size
+
+    //&:hover
+        //color: $white
+
+.button
+  min-width: 100px
+  text-align: center
+  border-radius: 3px
+  background-color: $blue
+  font-family: 'Concourse T3'
+  color: $white
+  padding: 12px 25px
+  font-size: 14px
+  font-weight: 700
+  line-height: 15px
+  text-transform: uppercase
+  letter-spacing: 1.12px
+  display: inline-block
+
+  //&:hover
+    //background-color: darken($blue, 5%)
+
+  &--orange
+    background: $orange
+    color: $white
+    min-width: auto
+    &:hover
+      background-color: darken($orange, 5%)
+
+  &.empty
+    background-color: $white
+    color: $blue
+    &:hover
+        background-color: $white
+        text-decoration: underline
+

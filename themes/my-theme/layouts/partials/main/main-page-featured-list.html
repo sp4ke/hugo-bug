@@ -1,0 +1,9 @@
+<section class="articles featured-section">
+  <div class="articles__title featured">Featured articles</div>
+  <div class="articles__wrap first-wrap">
+    {{range first 4 (where .Pages ".Params.featured"  true)}}
+      {{partial "main/main-page-section-item" .}}
+    {{end}}
+  </div>
+  <div class="articles__wrap right"></div>
+</section>

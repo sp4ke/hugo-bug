@@ -1,0 +1,10 @@
+<head>
+  <title>{{ .Page.Title }}</title>
+  {{partial "vendor/meta-og-tags" .}}
+  {{partial "vendor/favicons"}}
+  {{partial "vendor/analytics"}}
+  <link href="{{ .Site.BaseURL }}css/global.min.css" rel="stylesheet">
+  {{ if .RSSLink  }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{end}}
+</head>

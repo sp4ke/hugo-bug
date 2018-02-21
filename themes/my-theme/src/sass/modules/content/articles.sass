@@ -1,0 +1,225 @@
+.articles
+    display: flex
+    flex-wrap: wrap
+.articles__title.featured
+    color: $red
+    font-family: "Concourse T3"
+    font-size: 53px
+    font-weight: 400
+    line-height: 58px
+    margin-bottom: 30px
+    border: none
+    width: 100%
+.article__title 
+    margin-bottom: 10px
+    a
+        color: $black
+        font-family: "Concourse T2"
+        font-size: 33px
+        font-weight: 700
+        line-height: 41px
+.featured-section
+    .articles__wrap.first-wrap
+        width: 100%
+        .article__item:nth-child(even)
+            width: 35%
+        .article__item:first-child
+            .article__title
+                a
+                    font-size: 53px
+                    font-weight: 700
+                    line-height: 58px	
+        .article__item
+            width: 60%			
+.first-article
+    .article__title
+        a
+            font-size: 33px
+            line-height: 41px	
+
+.articles__wrap
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+    width: 100%
+    flex-wrap: wrap
+
+.first-wrap
+    .article__item
+        padding-left: 5%
+.article__item
+    width: 100%
+    &.full-width
+        width: 70%
+        padding-left: 0			
+
+.article__info
+    display: flex
+    align-items: center
+    font-size: 0.8em
+    margin-bottom: 20px
+
+.article__icon
+    display: inline-block
+    margin-right: 8px	
+
+.article__category__text
+    color: $red-2
+    font-weight: 700
+    letter-spacing: 1px
+    text-transform: uppercase
+    font-size: 0.9em
+    margin-right: 10px
+
+.article__date
+    color: $gray
+    margin-right: 10px
+
+.article__author
+    color: $gray
+    span
+        display: inline-block
+        //color: $black
+
+.article__text
+    margin-bottom: 25px
+    .base-text
+        @include text-link
+
+.article__info.info-bottom
+    justify-content: space-between
+.article__read-more
+    display: inline-block
+    color: $blue-2
+    font-family: "Concourse T3"
+    font-size: 18px
+    font-weight: 400
+    line-height: 52px
+    text-decoration: underline
+
+.article__comments
+    color: $gray
+    font-family: "Concourse T3"
+    font-size: 18px
+    font-weight: 400
+    line-height: 52px
+    span
+        display: inline-block
+        margin-right: 5px
+    img
+        position: relative
+        top: 4px
+
+.articles__title.featured
+    padding-left: 0
+    &:before
+        display: none
+
+.articles__title
+    display: block
+    color: $black
+    font-family: "Concourse T3"
+    font-size: 34px
+    font-weight: lighter
+    line-height: 45px
+    padding: 30px 0
+    position: relative
+    padding-left: 45px
+    text-transform: uppercase
+    &:before
+        content: ""
+        width: 27px
+        height: 10px
+        background-color: #4aadae
+        display: block
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-48%)
+
+section.articles.base-section:nth-child(2)
+    .articles__title
+        &:before
+            background-color: $orange	
+
+section.articles.base-section:nth-child(3)
+    .articles__title
+        &:before
+            background-color: $purple	
+
+section.articles.base-section:nth-child(4)
+    .articles__title
+        &:before
+            background-color: $red-2
+
+.title-block
+    display: -webkit-flex
+    margin-bottom: 50px
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    align-items: center
+    //border-top: 1px dotted $border-color
+    border-bottom: 1px dotted $border-color
+    width: 100%	
+    .title__icon
+        width: 27px
+        height: 10px
+        background-color: #4aadae
+        margin-right: 15px	
+    .title__link
+        margin-left: auto
+        color: $black-2
+        font-family: "Concourse T3"
+        font-size: 14px
+        font-weight: 700
+        line-height: 52px
+        text-transform: uppercase
+        letter-spacing: 0.28px
+        padding-right: 40px
+
+.title__link
+    position: relative
+    span
+        font-size: 20px
+        color: $gray
+        width: 6px
+        height: 11px
+        background-image: url(../images-theme/icon-arrow.png)
+        position: absolute
+        right: 10px
+        top: 50%
+        transform: translateY(-50%)
+
+.protocol
+    .title__icon
+        background-color: $red-2
+.events
+    .title__icon
+        background-color: $purple
+
+.pagination
+    width: 100%
+    border-top: 1px dotted $gray-lite-2
+    padding: 50px 0
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+.pagination__link
+    display: inline-block
+    color: $blue-2
+    font-size: .9em
+    &:hover
+        text-decoration: underline
+        
+    
+    
+.pagination__link.prev
+
+.pagination__link.next
+    .pagination__icon
+        margin-left: 10px
+        transform: rotate(180deg)

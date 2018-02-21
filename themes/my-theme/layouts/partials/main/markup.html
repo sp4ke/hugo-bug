@@ -1,0 +1,34 @@
+<main>
+	<div class="container flex-grid">
+		<div class="main__content">
+
+            {{ if .Param "debug" }}
+                {{ .Kind }}
+                {{ template "_internal/pagination.html" . }}
+
+            {{ end }}
+
+            {{ $paginator := .Paginator }}
+
+
+			{{partial "main/main-content-list" .}}
+			<!-- protocol -->
+			<!-- events -->
+			<div class="pagination">
+                {{ if .Paginator.HasPrev}}
+                    <a href="{{ .Paginator.Prev.URL }}" class="pagination__link prev">Previous</a>
+                    {{ else }}
+                    <a></a>
+                {{end}}
+
+                {{ if .Paginator.HasNext }}
+                <a href="{{ .Paginator.Next.URL }}" class="pagination__link next">Next {{ .Paginator.PageSize }} items</a>
+                {{end}}
+
+
+			</div>
+
+		</div>
+		{{partial "sidebar/markup" .}}
+	</div>
+</main>

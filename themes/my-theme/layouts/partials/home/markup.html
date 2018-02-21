@@ -1,0 +1,39 @@
+<main>
+	<div class="container flex-grid">
+		<div class="main__content">
+
+            {{ if .Param "debug" }}
+                {{ .Kind }}
+                <br />
+
+                <!--{{ template "_internal/pagination.html" . }}-->
+
+                {{ $test := index .Pages 0 }}
+                <p>{{ printf "%#T" $test.Params.mydates }}</p>
+                <p>{{ printf "%#v" $test.Params.mydates }}</p>
+
+                <!--Select content linked to issues-->
+                {{ $grouped := .Data.Pages.GroupByParamDate "mydates" "2006-01-02" }}
+
+                <!--sort by most recent-->
+                {{ $sorted := sort $grouped "Key" "asc" }}
+
+                <h4>Grouped {{ len $sorted }} pages by key <mydates></h4>
+                {{ range $sorted }}
+                    <h5>Group Key: {{ .Key }}</h5>
+                {{end}}
+
+
+            {{ end }}
+
+
+
+
+
+			<!-- protocol -->
+			<!-- events -->
+
+		</div>
+		{{partial "sidebar/markup" .}}
+	</div>
+</main>

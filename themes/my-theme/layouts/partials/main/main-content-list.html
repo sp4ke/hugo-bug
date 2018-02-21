@@ -1,0 +1,21 @@
+    {{ if eq .Kind "taxonomy" }}
+    <div class="title-block">
+        <a href="test" class="articles__title">{{ .Data.Term }}</a>
+    </div>
+    {{ end }}
+
+    {{ if eq .Kind "section" }}
+    <div class="title-block">
+        <a href="test" class="articles__title">{{ .Section }}</a>
+    </div>
+    {{ end }}
+
+{{ range .Paginator.Pages }}
+			<section class="articles base-section">
+				<div class="articles__wrap right">
+                        {{partial "main/main-content-list-item" .}}
+				</div>
+			</section>
+{{ end }}
+
+

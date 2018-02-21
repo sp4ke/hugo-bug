@@ -1,0 +1,7 @@
+{{ define "main" }}
+    {{ if .Param "debug" }}
+        <h5>list page</h5>
+    {{end}}
+
+    {{partial "main/markup" .}}
+{{end}}

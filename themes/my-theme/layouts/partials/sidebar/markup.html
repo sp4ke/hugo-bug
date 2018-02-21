@@ -1,0 +1,23 @@
+<aside class="sidebar">
+	<div class="categories">
+		<div class="categories__title">Category</div>
+		{{ range $taxonomyname, $taxonomy := .Site.Taxonomies.categories }}
+		{{ $name := $taxonomyname}}
+			<a href="{{ "/categories/" | relLangURL}}{{ $taxonomyname | urlize }}" class="categories__item">{{ $taxonomyname }}<span class="icon">&#8250;</span></a>
+		{{ end }}
+
+		<a href="javascript:void(0)" class="categories__item view-all">View all</a>
+	</div>
+
+	<!--<div class="buttons-wrap">-->
+		<!--<a href="javascript:void(0)" class="login button button--orange">Login</a>-->
+		<!--<a href="javascript:void(0)" class="subscribe button">Subscribe</a>-->
+	<!--</div>-->
+
+	<!--<div id="tags" class="tags">-->
+		<!--<div class="tags__title">Tags</div>-->
+	  <!--{{ range .Params.tags }}-->
+		<!--<a class="tags__item" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>-->
+	  <!--{{ end }}-->
+	<!--</div>-->
+</aside>

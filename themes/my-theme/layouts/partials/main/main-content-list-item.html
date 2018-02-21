@@ -1,0 +1,25 @@
+{{$itemSection := .}}
+<div class="article__item">
+	<article class="article">
+		<div class="article__title"><a href="{{$itemSection.Permalink}}">{{.Params.Title}}</a></div>
+		<div class="article__info">
+			<!-- <img src="images-theme/icon-dollar.svg" alt="" class="article__icon"> -->
+
+            <!--Not needed-->
+            <!--{{ range $category := .Params.categories }}-->
+            <!--<div href="{{ "/categories/" | relLangURL}}" class="article__category__text">{{ $category }}</div>-->
+            <!--{{ end }}-->
+            <!--Not needed-->
+
+			{{with $itemSection.Date}}
+				<div class="article__date">{{dateFormat "Monday Jan 2, 2006" .}}</div>
+			{{end}}
+			<div class="article__author">by <span>{{.Params.author}}</span></div>
+		</div>
+		<div class="article__text"><a href="{{$itemSection.Permalink}}" class="base-text">{{.Params.short_description }}</a></div>
+		<div class="article__info info-bottom">
+			<a href="{{$itemSection.Permalink}}" class="article__read-more"><span>Read more ...</span></a>
+			<!--<a href="{{$itemSection.Permalink}}" class="article__comments"><span>19 comments</span> <img src="images-theme/icon-comments.svg" alt=""></a>-->
+		</div>
+	</article>
+</div>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  {{partial "vendor/head" .}}
+
+  <body>
+    {{ partial "header/markup" . }}
+
+    {{ if .Param "debug" }}
+        <h5>debug mode</h5>
+        <h5>home page</h5>
+    {{end}}
+
+
+    {{partial "home/markup" .}}
+
+
+    {{ partial "footer/markup" . }}
+    {{partial "vendor/footer-scripts" .}}
+  </body>
+</html>

@@ -1,0 +1,65 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "index.js",
+  "webpackConfig": {
+    "inputFolder": "/themes/my-theme/src/",
+    "outputFolder": "/themes/my-theme/static/",
+    "prodServer": "/"
+  },
+  "scripts": {
+    "start": "npm-run-all --parallel webpack-watch hugo-server",
+    "hugo-server": "hugo server -D --debug",
+    "webpack-watch": "webpack --watch --config webpack.conf.js",
+    "build": "rm -rf public && webpack --config webpack.conf.js && hugo",
+    "build-staging": "rm -rf public && webpack --config webpack.conf.js && hugo --config=staging.config.toml"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015-webpack": "^6.4.3",
+    "copy-webpack-plugin": "^4.0.1",
+    "css-loader": "^0.28.4",
+    "datocms-client": "^0.3.25",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
+    "fluidable": "git+https://github.com/andri/fluidable.git",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-loader": "^0.4.5",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "^2.29.0",
+    "image-webpack-loader": "^3.3.1",
+    "imagemin-webpack-plugin": "^1.5.0-beta.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^4.5.3",
+    "normalize.sass": "^3.0.3",
+    "npm-run-all": "^4.0.2",
+    "optimize-css-assets-webpack-plugin": "^2.0.0",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "sass-resources-loader": "^1.2.1",
+    "slick-carousel": "^1.8.1",
+    "stringify-object": "^3.2.0",
+    "style-loader": "^0.18.2",
+    "transfer-webpack-plugin": "^0.1.4",
+    "url-loader": "^0.5.9",
+    "urlize.js": "^1.0.1",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "bourbon": "^5.0.0",
+    "jquery": "^3.2.1"
+  }
+}

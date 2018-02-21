@@ -1,0 +1,32 @@
+<section class="articles popular-section">
+	<div class="articles__title popular">Popular articles</div>
+    
+    <section class="articles base-section core">
+			<div class="title-block">
+				<div class="title__icon"></div>
+				<a href="#" class="articles__title">Core</a>
+				<a href="#" class="title__link">Read all <span></span></a>
+			</div>
+    	{{ range where .Paginator.Pages "Section" "ne" "" }}
+			<div class="articles__wrap">
+				<div class="article__item">
+					<article class="article">
+						<div class="article__title"><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></div>
+						<div class="article__info">
+							<!-- <img src="images-theme/icon-dollar.svg" alt="" class="article__icon"> -->
+							<a href="#" class="article__category__text">Category</a>
+							<div class="article__date">{{ dateFormat "Jan 2, 2006" .Params.Date }}</div>
+							<a href="#" class="article__author">by <span>{{ .Params.Author }}</span></a>
+						</div>
+						<div class="article__text"><a href="{{ .Permalink }}" class="base-text">{{ .Params.short_description }}</a></div>
+						<div class="article__info info-bottom">
+							<a href="{{ .Permalink }}" class="article__read-more"><span>Read more ...</span></a>
+							<a href="{{ .Permalink }} " class="article__comments"><span>19 comments</span> <img src="images-theme/icon-comments.svg" alt=""></a>
+						</div>
+					</article>
+				</div>
+			</div>
+			{{ end }}
+			<div class="articles__wrap right"></div>
+		</section>
+</section>

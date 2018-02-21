@@ -1,0 +1,11 @@
+{{ define "main" }}
+    {{ if .Site.Params.debug }}
+        <h2>single page</h2>
+        <br>
+        {{index .Aliases 0}}
+        <br>
+        <h4>issues</h4>
+        {{ .Params.Issues }}
+    {{end}}
+    {{ partial "article/markup.html" .}}
+{{end}}

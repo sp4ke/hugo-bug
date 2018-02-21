@@ -1,0 +1,31 @@
+{{$item := .}}
+<div class="article__item first-article full-width">
+	<article class="article">
+		<div class="article__title">
+			{{with $item.Params.title}}
+				<a href="{{$item.Permalink}}">{{.}}</a>
+			{{end}}
+		</div>
+		<div class="article__info">
+			<img src="images-theme/icon-dollar.svg" alt="" class="article__icon">
+			<div href="#" class="article__category__text">{{ .Params.categories }}</div>
+			{{with $item.Date}}
+				<div class="article__date">{{dateFormat "Monday, Jan 2, 2006" .}}</div>
+			{{end}}
+			{{with $item.Params.author}}
+				<a href="#" class="article__author">by <span>{{.}}</span></a>
+			{{end}}
+		</div>
+		{{with $item.Params.short_description}}
+		<div class="article__text">
+			<a href="{{$item.Permalink}}" class="base-text">
+				{{.}}
+			</a>
+		</div>
+		{{end}}
+		<div class="article__info info-bottom">
+			<a href="{{$item.Permalink}}" class="article__read-more"><span>Read more ...</span></a>
+			<!--<a href="" class="article__comments"><span>19 comments</span> <img src="images-theme/icon-comments.svg" alt=""></a>-->
+		</div>
+	</article>
+</div>

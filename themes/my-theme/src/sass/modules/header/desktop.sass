@@ -1,0 +1,81 @@
+.alert-message
+	font-size: 12px
+	width: 100%
+	background-color: $gray-2
+	text-align: center
+	position: relative
+	height: 41px
+	a
+		padding: 3px 0
+		display: inline-block
+		font-family: 'Concourse C4'
+		color: $gray-3
+		font-size: 12px
+		font-weight: 400
+	.close
+		width: 10px
+		height: 10px
+		display: block
+		position: absolute
+		right: 15%
+		top: 15px
+		background-image: url(../images-theme/icon-close.svg)
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: center
+		&:hover
+			cursor: pointer	
+
+header
+	min-height: 120px
+	height: 100%
+	display: flex
+	align-items: center
+	margin-bottom: 70px
+	.container
+		min-height: 120px
+		border-bottom: 1px dotted $border-color
+
+.logo
+	display: inline-block
+	img
+		max-width: 100%	
+
+.menu
+	margin-left: auto
+	margin-right: 60px
+	.menu__item
+		display: inline-block
+		margin-right: 45px
+		&:last-child
+			margin-right: 0
+	.menu__link
+		color: $black
+		font-family: "Concourse T3"
+		font-size: 13px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: 1.3px
+
+.search
+	position: relative
+	margin-right: 40px
+	.search__text
+		position: absolute
+		padding: 10px 20px
+		text-transform: uppercase
+		font-size: 13px
+		left: -400px
+		min-width: 300px
+		border: 1px solid $gray
+		display: none
+	.search__button
+		width: 17px
+		height: 17px
+		background-color: none
+		border: none
+		background-image: url(../images-theme/icon-search.svg)
+		background-size: cover
+		background-color: transparent
+		background-position: center
+		background-repeat: no-repeat			

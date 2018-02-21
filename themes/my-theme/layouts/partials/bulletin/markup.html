@@ -1,0 +1,110 @@
+<!--{{$quotes := .Params.quotes.quotes__text}}-->
+<main>
+	<div class="container flex-grid">
+		<div class="main__content">
+			<article class="single-article">
+                <!--<aside class="article-sidebar quotes">-->
+                    <!--<blockquote>{{ .Params.quotes__text1 }}</blockquote>-->
+                    <!--<blockquote>{{ .Params.quotes__text2 }}</blockquote>-->
+                    <!--<blockquote>{{ .Params.quotes__text3 }}</blockquote>-->
+                <!--</aside> -->
+				<section class="article-content">
+					<h1 class="single-article__title">{{ .Title }}</h1>
+					<div class="article__info">
+                        <!--<img src="/images-theme/icon-dollar.svg" alt="" class="article__icon">-->
+                        {{ range $category := .Params.categories }}
+                        <div href="{{ "/categories/" | relLangURL}}" class="article__category__text">{{ $category }}</div>
+                        {{ end }}
+						<!--<div class="article__date">{{ dateFormat "Monday Jan 2, 2006" .Params.Date }}</div>-->
+						<!--<div class="article__author">by <span>{{ .Params.Author }}</span></div>-->
+					</div>
+					<p class="single-article__description">{{ .Params.short_description_article }}</p>
+					<div class="single-article__text">
+						{{ .Content | markdownify  }}
+					</div>
+						<div id="tags" class="tags">
+						  {{ range .Params.tags }}
+						    <a class="tags__item" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+						  {{ end }}
+						</div>
+				</section>
+			</article>
+		</div> 
+		{{partial "sidebar/markup" .}}
+	</div>
+</main>
+
+
+
+{{ if 0 }}
+<div class="comments">
+	<div class="container">
+		<div class="comments-wrap" id="comments">
+			<div class="comment__responses">
+				<div class="comment__responses__title">Responses</div>
+				<form action="" class="comment__responses__form">
+					<div class="user-avatar">
+						<img src="/images-theme/avatar.png" alt="">
+					</div>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+					<div class="responses__form__info">
+						<div class="count-comments">6 Comments</div>
+						<div class="sort-comments">
+							<div class="sort__text">Sort by</div>
+							<select name="" id="">
+								<option value="" selected>Oldest</option>
+								<option value="">New</option>
+								<option value="">Latest</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="comment__item">
+				<div class="comment__title">John Eric S. Chin</div>
+				<div class="comment__content">
+					<div class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+					<div class="comment__control">
+						<a href="#" class="like">Like · </a>
+						<a href="#" class="reply">Reply · </a>
+						<div class="date">December 7, 2017, 23:18</div>
+					</div>
+				</div>
+			</div>
+			<div class="comment__item border--active">
+				<div class="comment__title">John Eric S. Chin</div>
+				<div class="comment__content">
+					<div class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+					<div class="comment__control">
+						<a href="#" class="like">Like · </a>
+						<a href="#" class="reply">Reply · </a>
+						<div class="date">December 7, 2017, 23:18</div>
+					</div>
+				</div>
+					<div class="comment__item reply--comment">
+						<div class="comment__title">John Eric S. Chin</div>
+						<div class="comment__content">
+							<div class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+							<div class="comment__control">
+								<a href="#" class="like">Like · </a>
+								<a href="#" class="reply">Reply · </a>
+								<div class="date">December 7, 2017, 23:18</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="comment__item">
+				<div class="comment__title">John Eric S. Chin</div>
+				<div class="comment__content">
+					<div class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
+					<div class="comment__control">
+						<a href="#" class="like">Like · </a>
+						<a href="#" class="reply">Reply · </a>
+						<div class="date">December 7, 2017, 23:18</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ end }}
